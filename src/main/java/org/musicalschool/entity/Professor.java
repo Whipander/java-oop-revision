@@ -1,7 +1,8 @@
-package org.musicalschool;
+package org.musicalschool.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.musicalschool.courseRelated.Course;
 
 import java.util.List;
 
@@ -27,8 +28,7 @@ public class Professor extends Person {
     }
 
     @Override
-    public String showInfos() {
-        return super.showInfos() + "Taught Instruments: " + instruments +
-                ", Courses: " + courses;
+    public void showInfos() {
+        System.out.println("Professor: " + getFirstName() + " " + getLastName() + ", Email: " + getEmail() + ", Instruments: " + instruments);
     }
 }

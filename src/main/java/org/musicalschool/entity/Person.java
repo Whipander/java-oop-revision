@@ -1,9 +1,9 @@
-package org.musicalschool;
+package org.musicalschool.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.musicalschool.Showable;
 
 @Getter
 @Setter
@@ -15,10 +15,7 @@ public class Person implements Showable {
     private String email;
 
     @Override
-    public String showInfos() {
-        return ("Person: " +
-                "Last Name:'" + lastName + "'" +
-                ", First Name:'" + firstName + "'" +
-                ", Email:'" + email + "'");
+    public void showInfos() {
+        System.out.println("Person: " + getFirstName() + " " + getLastName() + ", Email: " + getEmail());
     }
 }

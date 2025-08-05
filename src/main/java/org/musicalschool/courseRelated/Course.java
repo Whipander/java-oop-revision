@@ -1,8 +1,10 @@
-package org.musicalschool;
+package org.musicalschool.courseRelated;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.musicalschool.entity.Professor;
+import org.musicalschool.entity.Student;
 
 import java.util.List;
 

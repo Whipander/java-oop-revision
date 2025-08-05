@@ -3,6 +3,9 @@ package org.musicalschool;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.musicalschool.courseRelated.Course;
+import org.musicalschool.entity.Professor;
+import org.musicalschool.entity.Student;
 
 import java.util.Comparator;
 import java.util.List;

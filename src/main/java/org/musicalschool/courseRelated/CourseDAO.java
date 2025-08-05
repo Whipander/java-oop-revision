@@ -1,4 +1,6 @@
-package org.musicalschool;
+package org.musicalschool.courseRelated;
+
+import org.musicalschool.entity.Student;
 
 import java.util.List;
 import java.util.Map;
