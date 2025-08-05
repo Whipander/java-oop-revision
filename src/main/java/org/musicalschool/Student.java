@@ -1,6 +1,13 @@
 package org.musicalschool;
 
+import lombok.*;
+
 import java.util.List;
+
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = false)
+@ToString
 
 public class Student extends Person {
     private String id;

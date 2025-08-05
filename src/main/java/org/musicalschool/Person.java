@@ -1,13 +1,13 @@
 package org.musicalschool;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
-
 
 public class Person implements Showable {
     private String lastName;
