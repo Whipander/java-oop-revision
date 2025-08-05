@@ -9,12 +9,12 @@ import java.util.List;
 @Setter
 
 public class Professor extends Person {
-    private List<String> taughtInstruments;
+    private List<String> instruments;
     private List<Course> courses;
 
-    public Professor(String nom, String prenom, String email, List<String> taughtInstruments) {
+    public Professor(String nom, String prenom, String email, List<String> instruments) {
         super(nom, prenom, email);
-        this.taughtInstruments = taughtInstruments;
+        this.instruments = instruments;
     }
 
     public void teachCourse(Course course) {
@@ -24,6 +24,11 @@ public class Professor extends Person {
             courses.add(course);
             System.out.println("Course added to the list");
         }
+    }
 
+    @Override
+    public String showInfos() {
+        return super.showInfos() + "Taught Instruments: " + instruments +
+                ", Courses: " + courses;
     }
 }

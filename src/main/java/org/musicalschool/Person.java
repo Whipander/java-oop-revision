@@ -8,8 +8,17 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 
-public class Person {
-    private String nom;
-    private String prenom;
+
+public class Person implements Showable {
+    private String lastName;
+    private String firstName;
     private String email;
+
+    @Override
+    public String showInfos() {
+        return ("Person: " +
+                "Last Name:'" + lastName + "'" +
+                ", First Name:'" + firstName + "'" +
+                ", Email:'" + email + "'");
+    }
 }
