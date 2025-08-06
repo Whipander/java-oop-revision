@@ -1,5 +1,7 @@
 package org.libraryManagement.library;
 
+import java.util.Objects;
+
 public class Book {
     private String title;
     private String author;
@@ -37,5 +39,17 @@ public class Book {
                 "Author: '" + author + "'\n" +
                 "Published in: '" + publishYear + "'\n" +
                 "ISBN: '" + isbn + "'\n";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return publishYear == book.publishYear && Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(isbn, book.isbn);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, publishYear, isbn);
     }
 }

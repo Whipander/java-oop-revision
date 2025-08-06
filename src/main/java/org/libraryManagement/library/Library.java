@@ -1,10 +1,21 @@
 package org.libraryManagement.library;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Library {
     private List<Book> books;
+
+    public Library(List<Book> books) {
+        this.books = books;
+    }
+
+    public Library() {
+        this.books = new ArrayList<>();
+    }
 
     public void addBook(Book book) {
         if (books.contains(book)) {
@@ -38,13 +49,40 @@ public class Library {
                 .collect(Collectors.toList());
     }
 
-    public void showBooks() {
+    public void displayBooks() {
         books.stream()
                 .forEach(System.out::println);
     }
 
-    public void listBooks() {
+    public void displayBooksTitle() {
         books.stream()
                 .forEach(b -> System.out.println(b.getTitle()));
+    }
+
+    public List<Book> booksPublishedAfter(int year) {
+        return books.stream()
+                .filter(book -> book.getPublishYear() > year)
+                .collect(Collectors.toList());
+    }
+
+    public List<String> titlesAndAuthors() {
+        return books.stream().
+                map(b -> b.getTitle() + " - " + b.getAuthor())
+                .collect(Collectors.toList());
+    }
+
+    public List<Book> sortedByPublishYear() {
+        return books.stream()
+                .sorted(Comparator.comparing(Book::getPublishYear))
+                .collect(Collectors.toList());
+    }
+
+    public String authorWithMostBooks() {
+        return books.stream()
+                .collect(Collectors.groupingBy(Book::getAuthor, Collectors.counting()))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse("None");
     }
 }
