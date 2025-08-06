@@ -37,4 +37,14 @@ public class Library {
                 filter(book -> book.getAuthor().equals(author))
                 .collect(Collectors.toList());
     }
+
+    public void showBooks() {
+        books.stream()
+                .forEach(System.out::println);
+    }
+
+    public void listBooks() {
+        books.stream()
+                .forEach(b -> System.out.println(b.getTitle()));
+    }
 }
